@@ -3,8 +3,9 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #07010D;
+  overflow: hidden;
 }
 
 #left {
@@ -12,23 +13,38 @@ html, body {
   background-color: #02061A;
   width: 25%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   height: 100vh;
+  box-shadow: inset 0 0 100px 10px rgba(36, 16, 173, 0.3);
+  gap: 50px;
+}
+
+.socials_container {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  gap: 20px;               
+  position: absolute;        
+  bottom: 30px;              
+  left: 50%;                 
+  transform: translateX(-50%); 
 }
 
 #right {
-  margin-left: 25%; /* So content doesn’t hide behind #left */
+  margin-left: 25%;
   display: flex;
   color: white;
   flex-direction: column;
   justify-content: flex-start;
   background-color: #07010D;
-  min-height: 100vh;
+  overflow-y: auto;
   padding: 20px;
   flex: 1;
   gap: 50px;
+  box-shadow: inset 0 0 30px 4px rgba(224, 2, 2, 0.3);
 }
 
 .Frameworks{
@@ -69,7 +85,6 @@ html, body {
   z-index: 0;
   transition: all 0.3s ease;
   pointer-events: none; /* allow hover to reach button_wrapper */
-  box-shadow: inset 0 0 0 4px #FF5E5E;
 }
 
 .button_wrapper .button {
@@ -100,9 +115,17 @@ html, body {
   color: #FF0000;
 }
 
+.mlbg{
+    box-shadow: inset 0 0 0 4px #FF0000;
+}
+
 .Core_Programming {
   background-color: #107B23;
   color: #0DFF00;
+}
+
+.corebg {
+  box-shadow: inset 0 0 0 4px #0DFF00;
 }
 
 .vis{
@@ -110,9 +133,17 @@ html, body {
   color: #006FFF;
 }
 
+.visbg{
+  box-shadow: inset 0 0 0 4px #006FFF;
+}
+
 .devenv{
   background-color: #887F19;
   color: #B7FF0F;
+}
+
+.devenvbg{
+  box-shadow: inset 0 0 0 4px #B7FF0F;
 }
 
 .architecture_container {
@@ -187,7 +218,18 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
+  opacity: 0.8;
 }
+
+.project_image {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+}
+
 
 .project_text {
   width: 60%;
@@ -209,4 +251,32 @@ html, body {
   gap: 10px;
   width: 80%;
 
+}
+
+.project_wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* important */
+}
+
+.project_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  border-radius: 20px;
+  z-index: 0;
+  transition: all 0.3s ease;
+  pointer-events: none; /* allow hover to reach button_wrapper */
+}
+
+.project_wrapper .project {
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.project_wrapper:hover .project {
+  transform: translate(-20px, -20px);
 }
